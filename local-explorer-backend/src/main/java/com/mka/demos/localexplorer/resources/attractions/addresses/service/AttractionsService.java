@@ -44,16 +44,18 @@ public class AttractionsService {
 
     public Optional<AttractionsOutputDto> getAttractionsToExplore(AttractionsInputDto location) {
         String weatherDescription = null;
+        // Retrieving the Weather condition from OpenWeatherMap API
         Optional<DailyWeatherForcastOut> todaysWeather = openWeatherMapProxy
                 .getTodaysWeatherForcast(location.getLatitude(), location.getLongitude());
         if(todaysWeather.isPresent()) {
             weatherDescription = getWeatherDescription(todaysWeather.get());
         }
+        // Calling GPT3 to get attraction suggestions
         String prompt = generateGpt3Prompt(location, weatherDescription);
-        Optional<CompletionsOutput> attractionSuggetsionsString = completionsProxy.callGpt3Completions(prompt);
+        Optional<CompletionsOutput> attractionSuggetsions = completionsProxy.callGpt3Completions(prompt);
 
-        if(attractionSuggetsionsString.isPresent()) {
-            CompletionsOutput gpt3Response = attractionSuggetsionsString.get();
+        if(attractionSuggetsions.isPresent()) {
+            CompletionsOutput gpt3Response = attractionSuggetsions.get();
             if(gpt3Response.getChoices() != null && gpt3Response.getChoices().get(0) != null
                     && StringUtils.hasText(gpt3Response.getChoices().get(0).getText())) {
                 return mapTextToAttractionsOutDto(gpt3Response.getChoices().get(0).getText());
@@ -88,6 +90,7 @@ public class AttractionsService {
     private String generateGpt3Prompt(AttractionsInputDto location, String weatherDescription) {
         StringBuilder prompt = new StringBuilder()
                 .append(getFormattedLocationPrompt(location))
+                .append(TIME_PROMPT)
                 .append(INSTRUCTION_PROMPT);
         if(weatherDescription != null) {
             prompt.append(getFormattedWeatherPrompt(weatherDescription));

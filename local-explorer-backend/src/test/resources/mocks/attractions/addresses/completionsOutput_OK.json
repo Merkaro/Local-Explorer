@@ -1,0 +1,19 @@
+{
+  "id": "cmpl-8u3z3aGsdCW0d3b8Csh1uXAhnQh1T",
+  "object": "text_completion",
+  "created": 1708372373,
+  "model": "gpt-3.5-turbo-instruct",
+  "choices": [
+    {
+      "text": "\n\n[{\"name\": \"Chellah\", \"description\": \"Explore the ancient ruins and gardens of Chellah, a historic site in Rabat.\", \"address\": \"Chellah, Rabat, Morocco\"},\n{\"name\": \"Museum Mohamed VI of Modern and Contemporary Art\", \"description\": \"Escape the rain and visit this modern art museum, featuring works by Moroccan and international artists.\", \"address\": \"Avenue Moulay Hassan, Rabat, Morocco\"},\n{\"name\": \"Café Maure\", \"description\": \"Enjoy a cup of traditional Moroccan mint tea and a snack at this cozy café located in the Kasbah of the Udayas.\", \"address\": \"Kasbah of the Udayas, Rabat, Morocco\"},\n{\"name\": \"Le Dhow\", \"description\": \"Indulge in a delicious Moroccan meal at this restaurant, known for its seafood and stunning views of the Bou Regreg river.\", \"address\": \"Avenue Al Marsa, Rabat, Morocco\"}]",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 103,
+    "completion_tokens": 208,
+    "total_tokens": 311
+  }
+}

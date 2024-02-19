@@ -1,0 +1,24 @@
+{
+  "attractions": [
+    {
+      "name": "Chellah",
+      "description": "Explore the ancient ruins and gardens of Chellah, a historic site in Rabat.",
+      "address": "Chellah, Rabat, Morocco"
+    },
+    {
+      "name": "Museum Mohamed VI of Modern and Contemporary Art",
+      "description": "Escape the rain and visit this modern art museum, featuring works by Moroccan and international artists.",
+      "address": "Avenue Moulay Hassan, Rabat, Morocco"
+    },
+    {
+      "name": "Café Maure",
+      "description": "Enjoy a cup of traditional Moroccan mint tea and a snack at this cozy café located in the Kasbah of the Udayas.",
+      "address": "Kasbah of the Udayas, Rabat, Morocco"
+    },
+    {
+      "name": "Le Dhow",
+      "description": "Indulge in a delicious Moroccan meal at this restaurant, known for its seafood and stunning views of the Bou Regreg river.",
+      "address": "Avenue Al Marsa, Rabat, Morocco"
+    }
+  ]
+}

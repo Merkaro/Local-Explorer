@@ -25,7 +25,6 @@ public class PhotoController {
 
     public ResponseEntity<byte[]> getAttractionPhoto(
            @RequestParam("address") String address) {
-        //TODO - refacto => Switch construction of response entity to the service. Bug : error in case of empty
        if(photoService.getAttractionPhoto(address).isPresent()) {
            return ResponseEntity.ok()
                    .contentType(MediaType.IMAGE_JPEG)
